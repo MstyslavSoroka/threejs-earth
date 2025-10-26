@@ -33,8 +33,8 @@ const sphere = new THREE.Mesh(geometry, material);
 
 scene.add(sphere);
 
-const pointLight = new THREE.PointLight(0xffffff, 120);
-pointLight.position.set(0, 0, 0);
+const pointLight = new THREE.PointLight(0xffffff, 200);
+pointLight.position.set(10, 10, 10);
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
 
@@ -43,7 +43,7 @@ scene.add(pointLight, ambientLight);
 const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200, 50);
 
-// scene.add(lightHelper, gridHelper);
+// scene.add(lightHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.maxDistance = 100;
@@ -66,7 +66,7 @@ Array(2000).fill().forEach(addStar);
 
 function animate() {
   requestAnimationFrame(animate);
-  sphere.rotation.z += 0.005;
+  // sphere.rotation.z += 0.005;
   // sphere.rotation.x += 0.01;
   sphere.rotation.y += 0.01;
 
